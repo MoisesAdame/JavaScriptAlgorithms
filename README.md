@@ -36,6 +36,6 @@
 ### Contact
 - Moisés Adame Aguilar - [GitHub](https://github.com/MoisesAdame) - [Mail](mailto:a01660927@tec.mx)
 
-## Acknowledgments
+### Acknowledgments
 
 * A special thanks to our teachers ❤️.
