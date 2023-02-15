@@ -50,4 +50,64 @@ class doublyLikedList{
         }
         this.size++
     }
+
+    // Method that inserts a given value in a given position.
+    insert(data, index){
+        if(index < 0 || index > this.size){
+            throw 'Index out of bounds.'
+        }else if(index === 0){
+            this.addFirst(data)
+        }else if(index === this.size){
+            this.addLast(data)
+        }else{
+            var temp = this.head
+            for(var i = 0; i < index - 1; i++){
+                temp = temp.next
+            }
+
+            temp.next = new Node(data, temp, temp.next)
+        }
+        this.size++
+    }
+
+    // Method that removes the first element in the LinkedList.
+    removeFirst(){
+        if(this.head === null && this.tail === null){
+            throw 'The list is empty.'
+        }else if(this.size === 1){
+            this.head = null
+            this.tail = null
+        }else{
+            this.head.next.prev = null
+            this.head = this.head.next
+        }
+        this.size--
+    }
+
+    // Method that prints each and every data atribute from the list's nodes.
+    print(){
+        var temp = this.head
+        while(temp !== null){
+            temp.print()
+            temp = temp.next
+        }
+    }
 }
+
+var list1 = new doublyLikedList();
+for(var i = 0; i < 3; i++){
+    list1.addLast(i)
+}
+
+console.log('Print 1:')
+list1.removeFirst()
+list1.print()
+console.log('Print 2:')
+list1.removeFirst()
+list1.print()
+console.log('Print 3:')
+list1.removeFirst()
+list1.print()
+console.log('Print 3:')
+list1.removeFirst()
+list1.print()
