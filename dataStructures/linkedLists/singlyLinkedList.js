@@ -53,7 +53,9 @@ class singlyLinkedList{
 
     // Method that inserts a given value in a given position.
     insert(data, index){
-        if(index === 0){
+        if(index < 0 || index >= this.size){
+            throw 'Index out of bounds.'
+        }else if(index === 0){
             this.addFirst(data)
         }else if(index === this.size){
             this.addLast(data)
