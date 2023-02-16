@@ -18,7 +18,7 @@ class Node{
 }
 
 // LinkedList class made up of many interlocked instances of Node
-class doublyLikedList{
+export class doublyLinkedList{
     // -- Methods
     // Constructor method for the list.
     constructor(){
