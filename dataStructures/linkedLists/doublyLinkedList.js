@@ -84,6 +84,20 @@ class doublyLikedList{
         this.size--
     }
 
+    // Method that removes the first element in the LinkedList.
+    removeLast(){
+        if(this.head === null && this.tail === null){
+            throw 'The list is empty.'
+        }else if(this.size === 1){
+            this.head = null
+            this.tail = null
+        }else{
+            this.tail.prev.next = null
+            this.tail = this.tail.prev
+        }
+        this.size--
+    }
+
     // Method that prints each and every data atribute from the list's nodes.
     print(){
         var temp = this.head
@@ -93,21 +107,3 @@ class doublyLikedList{
         }
     }
 }
-
-var list1 = new doublyLikedList();
-for(var i = 0; i < 3; i++){
-    list1.addLast(i)
-}
-
-console.log('Print 1:')
-list1.removeFirst()
-list1.print()
-console.log('Print 2:')
-list1.removeFirst()
-list1.print()
-console.log('Print 3:')
-list1.removeFirst()
-list1.print()
-console.log('Print 3:')
-list1.removeFirst()
-list1.print()
