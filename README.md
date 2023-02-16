@@ -29,7 +29,7 @@
     <li><a href="#motivation">Hash Table</a></li>
     <li><a href="#motivation">Heap</a></li>
     <li><a href="#motivation">Trie</a></li>
-    <li><a href="#motivation">Tree</a></li>
+    <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/trees">Tree</a></li>
   </ol>
 </details>
 
