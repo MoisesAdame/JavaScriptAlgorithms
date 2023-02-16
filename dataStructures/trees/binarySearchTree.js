@@ -1,6 +1,6 @@
 // Author: Moisés Adame-Aguilar
 // Date: February 15, 2023
-// Descrption: Singly Linked List
+// Descrption: Binary Search Tree.
 
 // Node class for every element in the LinkedList
 class Node{
@@ -51,37 +51,100 @@ class binarySearchTree{
         }
     }
 
-    // Method that prints the inTraversal of the Tree
-    inTraversal(){
-        this.#inTraversal(this.root)
+    // Method that returns the max value inside the tree.
+    getMax(){
+        if(this.root === null){
+            throw 'Empty tree.'
+        }else{
+            return this.#getMax(this.root)
+        }
+    }
+    
+    #getMax(root){
+        if(root.right !== null){
+            return this.#getMax(root.right)
+        }else{
+            return root.data
+        }
     }
 
-    #inTraversal(root){
+    // Method that returns the min value inside the tree.
+    getMin(){
+        if(this.root === null){
+            throw 'Empty tree.'
+        }else{
+            return this.#getMin(this.root)
+        }
+    }
+    
+    #getMin(root){
+        if(root.left !== null){
+            return this.#getMin(root.left)
+        }else{
+            return root.data
+        }
+    }
+
+    // Method that prints the preOrder traversal walk of the Tree.
+    preOrder(){
+        this.#preOrder(this.root)
+    }
+
+    #preOrder(root){
         if(root.left !== null && root.right !== null){
-            this.#inTraversal(root.left)
             root.print()
-            this.#inTraversal(root.right)
+            this.#preOrder(root.left)
+            this.#preOrder(root.right)
         }else if(root.left !== null){
-            this.#inTraversal(root.left)
+            root.print()
+            this.#preOrder(root.left)
+        }else if(root.right !== null){
+            root.print()
+            this.#preOrder(root.right)
+        }else{
+            root.print()
+        }
+    }
+
+    // Method that prints the inOrder traversal walk of the Tree.
+    inOrder(){
+        this.#inOrder(this.root)
+    }
+
+    #inOrder(root){
+        if(root.left !== null && root.right !== null){
+            this.#inOrder(root.left)
+            root.print()
+            this.#inOrder(root.right)
+        }else if(root.left !== null){
+            this.#inOrder(root.left)
             root.print()
         }else if(root.right !== null){
             root.print()
-            this.#inTraversal(root.right)
+            this.#inOrder(root.right)
+        }else{
+            root.print()
+        }
+    }
+
+    // Method that prints the postOrder traversal walk of the Tree.
+    postOrder(){
+        this.#postOrder(this.root)
+    }
+
+    #postOrder(root){
+        if(root.left !== null && root.right !== null){
+            this.#postOrder(root.left)
+            this.#postOrder(root.right)
+            root.print()
+        }else if(root.left !== null){
+            this.#postOrder(root.left)
+            root.print()
+        }else if(root.right !== null){
+            this.#postOrder(root.right)
+            root.print()
         }else{
             root.print()
         }
     }
 }
-
-
-var myTree = new binarySearchTree()
-
-myTree.insert(5)
-myTree.insert(-6)
-myTree.insert(37)
-myTree.insert(-7)
-
-
-myTree.inTraversal()
-
-
