@@ -106,9 +106,82 @@ class binarySearchTree{
         }
     }
 
+    // Method that deletes a given value inside the tree.
+    delete(value){
+        if(this.root === null){
+            throw 'Empty tree.'
+        }else if(!this.search(value)){
+            throw 'Value not inside tree.'
+        }else if(this.root.data === value){
+            if(this.root.left === null && this.root.right === null){
+                this.root = null
+            }else if(this.root.left === null){
+                this.root = this.root.right
+            }else if(this.root.right === null){
+                this.root = this.root.left
+            }else{
+                var temp = this.root.left
+                this.root = this.root.right
+                this.#insert(this.root, temp)
+            }
+        }else{
+            this.#delete(value, this.root)
+        }
+    }
+
+    #delete(value, root){
+        var rootLeft = root.left
+        var rootRight = root.right
+        if(rootLeft !== null){
+            if(rootLeft.data === value){
+                if(rootLeft.left === null && rootLeft.right === null){
+                    root.left = null
+                }else if(rootLeft.left === null){
+                    root.left = rootLeft.right
+                }else if(rootLeft.right === null){
+                    root.left = rootLeft.left
+                }else{
+                    var temp = rootLeft.left
+                    root.left = rootLeft.right
+                    this.#insert(root.left, temp)
+                }
+            }else{
+                if(root.data > value){
+                    this.#delete(value, root.left)
+                }else if(root.data < value){
+                    this.#delete(value, root.right)
+                }
+            }
+        }else if(rootRight !== null){
+            if(rootRight.data === value){
+                if(rootRight.left === null && rootRight.right === null){
+                    root.right = null
+                }else if(rootRight.left === null){
+                    root.right = rootRight.right
+                }else if(rootRight.right === null){
+                    root.right = rootRight.left
+                }else{
+                    var temp = rootRight.left
+                    root.right = rootRight.right
+                    this.#insert(root.right, temp)
+                }
+            }else{
+                if(root.data > value){
+                    this.#delete(value, root.left)
+                }else if(root.data < value){
+                    this.#delete(value, root.right)
+                }
+            }
+        }
+    }
+
     // Method that prints the preOrder traversal walk of the Tree.
     preOrder(){
-        this.#preOrder(this.root)
+        if(this.root === null){
+            throw 'Empty tree.'
+        }else{
+            this.#preOrder(this.root)
+        }
     }
 
     #preOrder(root){
@@ -129,7 +202,11 @@ class binarySearchTree{
 
     // Method that prints the inOrder traversal walk of the Tree.
     inOrder(){
-        this.#inOrder(this.root)
+        if(this.root === null){
+            throw 'Empty tree.'
+        }else{
+            this.#inOrder(this.root)
+        }
     }
 
     #inOrder(root){
@@ -150,7 +227,11 @@ class binarySearchTree{
 
     // Method that prints the postOrder traversal walk of the Tree.
     postOrder(){
-        this.#postOrder(this.root)
+        if(this.root === null){
+            throw 'Empty tree.'
+        }else{
+            this.#postOrder(this.root)
+        }
     }
 
     #postOrder(root){
