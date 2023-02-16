@@ -33,6 +33,7 @@ class AVLTree{
         }else{
             this.#insert(this.root, newNode)
         }
+        this.#checkBalance(this.root)
     }
 
     #insert(currNode, newNode){
@@ -60,22 +61,48 @@ class AVLTree{
         if(root === null){
             return 0
         }else if(root.left === null && root.right === null){
-            return 0
+            return 1
         }else if(root.left === null){
-            return 1 + this.height(root.right)
+            return 1 + this.#height(root.right)
         }else if(root.right === null){
-            return 1 + this.height(root.left)
+            return 1 + this.#height(root.left)
         }else{
-            var leftHeight = this.height(root.left)
-            var rightHeight = this.height(root.right)
+            var leftHeight = this.#height(root.left)
+            var rightHeight = this.#height(root.right)
 
-            return 1 + leftHeight >= rightHeight ? leftHeight : rightHeight
+            return 1 + (leftHeight >= rightHeight ? leftHeight : rightHeight)
         }
     }
 
     // Method that calculates the height of a given node.
     #balanceFactor(node){
         return this.#height(node.right) - this.#height(node.left)
+    }
+
+    // Method that checks if the AVLTree is balanced.
+    #checkBalance(root){
+        var balanceFactor = this.#balanceFactor(root)
+        if(root.left !== null && root.right !== null){
+            this.#checkBalance(root.left)
+            if(balanceFactor > 1 || balanceFactor < -1 ){
+                ;
+            }
+            this.#checkBalance(root.right)
+        }else if(root.left !== null){
+            this.#checkBalance(root.left)
+            if(balanceFactor > 1 || balanceFactor < -1 ){
+                ;
+            }
+        }else if(root.right !== null){
+            if(balanceFactor > 1 || balanceFactor < -1 ){
+                ;
+            }
+            this.#checkBalance(root.right)
+        }else{
+            if(balanceFactor > 1 || balanceFactor < -1 ){
+                ;
+            }
+        }
     }
 
     // Method that prints the preOrder traversal walk of the Tree.
