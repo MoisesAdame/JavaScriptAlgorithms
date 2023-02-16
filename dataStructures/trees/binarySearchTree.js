@@ -85,6 +85,27 @@ class binarySearchTree{
         }
     }
 
+    // Method that returns a boolean given a certain value was found or not.
+    search(value){
+        if(this.root === null){
+            throw 'Empty tree.'
+        }else{
+            return this.#search(value, this.root)
+        }
+    }
+
+    #search(value, root){
+        if(root.data === value){
+            return true
+        }else if(root.data < value && root.right !== null){
+            return this.#search(value, root.right)
+        }else if(root.data > value && root.left !== null){
+            return this.#search(value, root.left)
+        }else{
+            return false
+        }
+    }
+
     // Method that prints the preOrder traversal walk of the Tree.
     preOrder(){
         this.#preOrder(this.root)
