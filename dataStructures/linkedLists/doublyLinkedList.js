@@ -114,4 +114,11 @@ export class doublyLinkedList{
             temp = temp.next
         }
     }
+
+    // Method that removes all objects from the list.
+    clear(){
+        this.head = null
+        this.tail = null
+        this.size = 0
+    }
 }

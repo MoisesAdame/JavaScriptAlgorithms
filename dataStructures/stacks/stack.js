@@ -29,11 +29,4 @@ class stack extends doublyLinkedList{
             return this.head.data
         }
     }
-
-    // Method that removes all objects from the stack.
-    clear(){
-        this.head = null
-        this.tail = null
-        this.size = 0
-    }
 }
