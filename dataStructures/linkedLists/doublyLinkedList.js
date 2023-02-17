@@ -72,30 +72,38 @@ export class doublyLinkedList{
 
     // Method that removes the first element in the LinkedList.
     removeFirst(){
+        var returnValue
         if(this.head === null && this.tail === null){
             throw 'The list is empty.'
         }else if(this.size === 1){
+            returnValue = this.head.data
             this.head = null
             this.tail = null
         }else{
+            returnValue = this.head.data
             this.head.next.prev = null
             this.head = this.head.next
         }
         this.size--
+        return returnValue
     }
 
     // Method that removes the first element in the LinkedList.
     removeLast(){
+        var returnValue
         if(this.head === null && this.tail === null){
             throw 'The list is empty.'
         }else if(this.size === 1){
+            returnValue = this.tail.data
             this.head = null
             this.tail = null
         }else{
+            returnValue = this.tail.data
             this.tail.prev.next = null
             this.tail = this.tail.prev
         }
         this.size--
+        return returnValue
     }
 
     // Method that prints each and every data atribute from the list's nodes.
