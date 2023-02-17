@@ -24,7 +24,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/linkedLists">Linked List</a></li>
-    <li><a href="#motivation">Stack</a></li>
+    <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/stacks">Stack</a></li>
     <li><a href="#motivation">Queue</a></li>
     <li><a href="#motivation">Hash Table</a></li>
     <li><a href="#motivation">Heap</a></li>
