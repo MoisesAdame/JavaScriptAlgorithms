@@ -25,10 +25,10 @@
   <ol>
     <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/linkedLists">Linked List</a></li>
     <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/stacks">Stack</a></li>
-    <li><a href="#https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/queues">Queue</a></li>
-    <li><a href="#https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/hastTables">Hash Table</a></li>
-    <li><a href="#https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/heaps">Heap</a></li>
-    <li><a href="#https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/tries">Trie</a></li>
+    <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/queues">Queue</a></li>
+    <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/hastTables">Hash Table</a></li>
+    <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/heaps">Heap</a></li>
+    <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/tries">Trie</a></li>
     <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/trees">Tree</a></li>
   </ol>
 </details>
