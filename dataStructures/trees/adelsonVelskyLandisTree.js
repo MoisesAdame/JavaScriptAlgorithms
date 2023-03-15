@@ -70,6 +70,7 @@ class AVLTree{
         var topTree = root
         var midTree = topTree.left
         var midTreeRight = topTree.left.right
+
         topTree.left = midTreeRight
         midTree.right = topTree
 
@@ -99,18 +100,4 @@ class AVLTree{
         }
         return root
     }
-
-
 }
-
-
-let myTree = new AVLTree()
-myTree.insert(12)
-myTree.insert(15)
-myTree.insert(20)
-
-// console.log(myTree)
-// console.log(myTree.height(myTree.root.left))
-// console.log(myTree.height(myTree.root.right))
-// myTree.root = myTree.balance(myTree.root)
-console.log(myTree)
