@@ -94,7 +94,6 @@ export class doublyLinkedList{
 
             return temp.data
         }
-        
     }
 
     // Method that searches an element with the linear search algorithm
@@ -104,7 +103,7 @@ export class doublyLinkedList{
         for(var i = 0; i <= this.size; i++){
             if(temp === null){
                 return -1
-            }else if(temp.data === data){
+            }else if(temp.data == data){
                 return i
             }
             temp = temp.next
