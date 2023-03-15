@@ -70,6 +70,47 @@ export class doublyLinkedList{
         this.size++
     }
 
+    // Method that returns data given a node.
+    get(index){
+        // Checking that the index is valid
+        if(index < 0 || index >= this.size){
+            throw 'Index out of bounds.'
+        
+        // Optimizing the search starting from the head.
+        }else if(index <= this.size / 2){
+            var temp = this.head
+            for(var i = 0; i < index; i++){
+                temp = temp.next
+            }
+
+            return temp.data
+
+        // Optimizing the search starting from the tail.
+        }else{
+            var temp = this.tail
+            for(var i = this.size - 1; i > index; i--){
+                temp = temp.prev
+            }
+
+            return temp.data
+        }
+        
+    }
+
+    // Method that searches an element with the linear search algorithm
+    // returning it's index.
+    linearSearch(data){
+        var temp = this.head
+        for(var i = 0; i <= this.size; i++){
+            if(temp === null){
+                return -1
+            }else if(temp.data === data){
+                return i
+            }
+            temp = temp.next
+        }
+    }
+
     // Method that removes the first element in the LinkedList.
     removeFirst(){
         var returnValue
