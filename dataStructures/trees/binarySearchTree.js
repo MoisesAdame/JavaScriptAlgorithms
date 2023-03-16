@@ -24,31 +24,20 @@ class binarySearchTree{
         this.root = null
     }
 
-    // Method that inserts a new node where it should be
+    // Method that inserts a new node where it should be。
     insert(data){
-        // Node that is going to be inserted.
-        var newNode = new Node(data, null, null)
-        if(this.root === null){
-            this.root = newNode
-        }else{
-            this.#insert(this.root, newNode)
-        }
+        this.root = this.#insert(this.root, data)
     }
 
-    #insert(currNode, newNode){
-        if(currNode.data <= newNode.data){
-            if(currNode.right === null){
-                currNode.right = newNode
-            }else{
-                this.#insert(currNode.right, newNode)
-            }
-        }else if(currNode.data > newNode.data){
-            if(currNode.left === null){
-                currNode.left = newNode
-            }else{
-                this.#insert(currNode.left, newNode)
-            }
+    #insert(root, data){
+        if(root === null){
+            return new Node(data, null, null)
+        }else if(root.data >= data){
+            root.left = this.#insert(root.left, data)
+        }else if(root.data < data){
+            root.right = this.#insert(root.right, data)
         }
+        return root
     }
 
     // Method that returns the max value inside the tree.
