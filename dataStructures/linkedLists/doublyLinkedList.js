@@ -96,6 +96,31 @@ export class doublyLinkedList{
         }
     }
 
+    // -- SORTING ALGORITHMS
+    // Method that sorts the LinkedList using Insertion Sort Algorithm.
+    insertionSort(){
+        var currentItem = this.head
+        var currentMin = currentItem
+        var tempMin = currentItem
+        while(currentItem !== null){
+            currentMin = currentItem
+            tempMin = currentItem
+            while(tempMin !== null){
+                if(currentMin.data > tempMin.data){
+                    currentMin = tempMin
+                }
+                tempMin = tempMin.next
+            }
+            this.#swap(currentItem, currentMin)
+            currentItem = currentItem.next
+        }
+    }
+
+    #swap(node1, node2){
+        [node1.data, node2.data] = [node2.data, node1.data]
+    }
+
+    // -- SEARCHING ALGORITHMS
     // Method that searches an element with the linear search algorithm
     // returning it's index.
     linearSearch(data){
