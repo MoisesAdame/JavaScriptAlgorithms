@@ -23,6 +23,7 @@ class RBTree{
         this.root = null
     }
 
+    // Method that find a place for new nodes.
     insert(data){
         this.root = this.#insert(this.root, data)
     }
@@ -37,4 +38,6 @@ class RBTree{
         }
         return root
     }
+
+    
 }
