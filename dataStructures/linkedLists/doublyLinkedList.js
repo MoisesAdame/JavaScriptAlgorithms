@@ -100,8 +100,8 @@ export class doublyLinkedList{
     // Method that sorts the LinkedList using Insertion Sort Algorithm.
     insertionSort(){
         var currentItem = this.head
-        var currentMin = currentItem
-        var tempMin = currentItem
+        var currentMin
+        var tempMin
         while(currentItem !== null){
             currentMin = currentItem
             tempMin = currentItem
@@ -113,6 +113,20 @@ export class doublyLinkedList{
             }
             this.#swap(currentItem, currentMin)
             currentItem = currentItem.next
+        }
+    }
+
+    // Method that sorts the LinkedList using Bubble Sort Algorithm.
+    bubbleSort(){
+        var currentBubble
+        for(var i = this.size; i > 0; i--){
+            currentBubble = this.head
+            for(var j = 0; j < i - 1; j++){
+                if(currentBubble.data > currentBubble.next.data){
+                    this.#swap(currentBubble, currentBubble.next)
+                }
+                currentBubble = currentBubble.next
+            }
         }
     }
 

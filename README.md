@@ -47,6 +47,7 @@
   <summary>Sorting Algorithms</summary>
     <ol>
       <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/blob/main/dataStructures/linkedLists/doublyLinkedList.js#L101">Insertion Sort</a></li>
+      <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/blob/main/dataStructures/linkedLists/doublyLinkedList.js#L120">Bubble Sort</a></li>
     </ol>
 </details>
 
