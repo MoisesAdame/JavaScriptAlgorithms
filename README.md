@@ -41,12 +41,15 @@
     <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/linkedLists">Matrix Sum</a></li>
     <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/linkedLists">Matrix Multiplication</a></li>
   </ol>
-  <summary>Sorting Algorithms</summary>
-  <ol>
-    <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/blob/main/dataStructures/linkedLists/doublyLinkedList.js#L101">Insertion Sort</a></li>
-  </ol>
-
 </details>
+
+<details>
+  <summary>Sorting Algorithms</summary>
+    <ol>
+      <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/blob/main/dataStructures/linkedLists/doublyLinkedList.js#L101">Insertion Sort</a></li>
+    </ol>
+</details>
+
 
 ### Contact
 - Moisés Adame Aguilar - [GitHub](https://github.com/MoisesAdame) - [Mail](mailto:a01660927@tec.mx)
