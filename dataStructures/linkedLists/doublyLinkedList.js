@@ -96,6 +96,32 @@ export class doublyLinkedList{
         }
     }
 
+    // Method that returns the max value inside the list.
+    max(){
+        var maxValue = this.head
+        var temp = this.head
+        while(temp !== null){
+            if(maxValue.data < temp.data){
+                maxValue = temp
+            }
+            temp = temp.next
+        }
+        return maxValue.data
+    }
+
+    // Method that returns the min value inside the list.
+    min(){
+        var minValue = this.head
+        var temp = this.head
+        while(temp !== null){
+            if(minValue.data > temp.data){
+                minValue = temp
+            }
+            temp = temp.next
+        }
+        return minValue.data
+    }
+
     // -- SORTING ALGORITHMS
     // Method that sorts the LinkedList using Insertion Sort Algorithm.
     insertionSort(){
@@ -130,8 +156,40 @@ export class doublyLinkedList{
         }
     }
 
+    // Method that swaps the data between two nodes.
     #swap(node1, node2){
         [node1.data, node2.data] = [node2.data, node1.data]
+    }
+
+    // Method that sorts the LinkedList using Counting Sort Algorithm.
+    countingSort(){
+        // The array is filled up with zeros
+        var maxValue = this.max() + 1
+        var countingArray = Array(maxValue).fill(0);
+        var temp = this.head
+
+        // The values are counted up.
+        while(temp !== null){
+            countingArray[temp.data] += 1
+            temp = temp.next
+        }
+        
+        // Summing up adyacent values.
+        for(var i = 1; i < countingArray.length; i++){
+            countingArray[i] += countingArray[i - 1]
+        }
+
+        // Moving all the values to the right.
+        countingArray.pop()
+        countingArray = [0].concat(countingArray)
+
+        // Creating the new array.
+        this.clear()
+        for(var i = 0; i < countingArray.length; i++){
+            for(var j = 0; j < (countingArray[i + 1] - countingArray[i]); j++){
+                this.addLast(i)
+            }
+        }
     }
 
     // -- SEARCHING ALGORITHMS
@@ -201,3 +259,19 @@ export class doublyLinkedList{
         this.size = 0
     }
 }
+
+var myList = new doublyLinkedList()
+myList.addLast(12)
+myList.addLast(3)
+myList.addLast(22)
+// myList.addLast(-8)
+myList.addLast(4)
+// myList.addLast(-100)
+myList.addLast(5)
+
+
+console.log('[*] Not Ordered:')
+myList.print()
+myList.countingSort()
+console.log('[*] Ordered:')
+myList.print()
