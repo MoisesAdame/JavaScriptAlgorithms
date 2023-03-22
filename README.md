@@ -52,6 +52,13 @@
     </ol>
 </details>
 
+<details>
+  <summary>Searching Algorithms</summary>
+    <ol>
+      <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/blob/main/dataStructures/linkedLists/doublyLinkedList.js#L198">Linear Search</a></li>
+      <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/blob/main/dataStructures/linkedLists/doublyLinkedList.js#L212">Binary Search</a></li>
+    </ol>
+</details>
 
 ### Contact
 - Moisés Adame Aguilar - [GitHub](https://github.com/MoisesAdame) - [Mail](mailto:a01660927@tec.mx)

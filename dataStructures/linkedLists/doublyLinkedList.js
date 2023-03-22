@@ -207,6 +207,28 @@ export class doublyLinkedList{
         }
     }
 
+    // Method that searches an element with the binary search algorithm
+    // returning it's index.
+    binarySearch(target, left, right){
+        // If left is bigger than right return an invalid index.
+        if(left > right){
+            return -1
+        }
+
+        // Mid value nad index.
+        var midIndex = Math.trunc((right + left) / 2)
+        var midValue = this.get(midIndex)
+
+        // Until the target and midValue are the same, the recursion continues.
+        if(midValue > target){
+            return this.binarySearch(target, left, midIndex - 1)
+        }else if(midValue < target){
+            return this.binarySearch(target, midIndex + 1, right)
+        }else{
+            return midIndex
+        }
+    }
+
     // Method that removes the first element in the LinkedList.
     removeFirst(){
         var returnValue
@@ -259,19 +281,3 @@ export class doublyLinkedList{
         this.size = 0
     }
 }
-
-var myList = new doublyLinkedList()
-myList.addLast(12)
-myList.addLast(3)
-myList.addLast(22)
-// myList.addLast(-8)
-myList.addLast(4)
-// myList.addLast(-100)
-myList.addLast(5)
-
-
-console.log('[*] Not Ordered:')
-myList.print()
-myList.countingSort()
-console.log('[*] Ordered:')
-myList.print()
