@@ -209,7 +209,11 @@ export class doublyLinkedList{
 
     // Method that searches an element with the binary search algorithm
     // returning it's index.
-    binarySearch(target, left, right){
+    binarySearch(target){
+        return this.#binarySearch(target, 0, this.size - 1)
+    }
+
+    #binarySearch(target, left, right){
         // If left is bigger than right return an invalid index.
         if(left > right){
             return -1
@@ -221,9 +225,9 @@ export class doublyLinkedList{
 
         // Until the target and midValue are the same, the recursion continues.
         if(midValue > target){
-            return this.binarySearch(target, left, midIndex - 1)
+            return this.#binarySearch(target, left, midIndex - 1)
         }else if(midValue < target){
-            return this.binarySearch(target, midIndex + 1, right)
+            return this.#binarySearch(target, midIndex + 1, right)
         }else{
             return midIndex
         }
