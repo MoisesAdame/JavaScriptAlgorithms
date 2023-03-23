@@ -30,6 +30,7 @@
     <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/heaps">Heap</a></li>
     <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/tries">Trie</a></li>
     <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/trees">Tree</a></li>
+    <li><a href="https://github.com/MoisesAdame/JavaScriptAlgorithms/tree/main/dataStructures/graphs">Graph</a></li>
   </ol>
 </details>
 
