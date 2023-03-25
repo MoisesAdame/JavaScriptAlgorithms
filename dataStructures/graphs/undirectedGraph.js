@@ -2,6 +2,8 @@
 // Date: March 23, 2023
 // Descrption: Undirected Graph using and Adjacency List.
 
+import { queue } from "../queues/queue";
+
 class uGraph{
     // -- Methods
     // Contructor method for and Undirected Graph using and Adjacency List.
@@ -43,6 +45,15 @@ class uGraph{
         }
     }
 
+    // Method that reoves an edge between two vertices.
+    removeEdge(vertex1, vertex2){
+        var deleteIndex = this.adjacencyList[vertex1].indexOf(vertex2)
+        this.adjacencyList[vertex1].splice(deleteIndex, 1)
+
+        deleteIndex = this.adjacencyList[vertex2].indexOf(vertex1)
+        this.adjacencyList[vertex2].splice(deleteIndex, 1)
+    }
+
     // Method that prints every vertex and it's neighbours.
     print(){
         var keys = Object.keys(this.adjacencyList)
@@ -57,3 +68,20 @@ class uGraph{
         }
     }
 }
+
+var myGraph = new uGraph()
+myGraph.addVertex('A')
+myGraph.addVertex('B')
+myGraph.addVertex('C')
+myGraph.addVertex('D')
+myGraph.addVertex('E')
+myGraph.addVertex('F')
+
+myGraph.addEdge('A', 'B')
+myGraph.addEdge('A', 'C')
+myGraph.addEdge('A', 'F')
+myGraph.addEdge('A', 'E')
+myGraph.addEdge('D', 'B')
+myGraph.addEdge('F', 'C')
+
+myGraph.print()
